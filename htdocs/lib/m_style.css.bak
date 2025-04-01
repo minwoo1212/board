@@ -1,0 +1,4 @@
+body, table, tr, td, TD, select, input, div, form, textarea, center, option, pre, blockquote
+{font-size:10pt; font-family:돋음, 굴림, sans-serif, Arial; color:#575656; line-height:120%}
+
+A:link{font-family:돋음, 굴림, sans-serif, Arial; font-size:9pt; color:#575656; line-height:120%}

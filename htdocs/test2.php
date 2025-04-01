@@ -1,0 +1,29 @@
+<?php 
+header("content-type: text/html; charset=UTF-8");
+$id = $_POST[id];
+$user_id = $_POST[user_id];
+$name = $_POST[name];
+$pw = $_POST[pw];
+$memo = $_POST[memo];
+
+$regdate=date("YmdHis", time());
+$ip=getenv("REMOTE_ADDR");
+
+$connect=mysql_connect("localhost","test","qweasdzxc1");
+mysql_select_db("test",$connect);
+if(!$connect){
+	echo "연결에 실패".mysql_error();
+}
+
+// 쿼리 전송
+$query="insert into bbs_1(id, user_id, name, pw, memo, regdate, ip) values('$id', '$user_id', '$name', '$pw', '$memo', '$regdate', '$ip')";
+mysql_query("set names utf8", $connect); // 캐릭터셋 변환
+mysql_query($query, $connect);
+
+mysql_close;
+?>
+
+<script>
+window.alert("쿼리가 정상 전송완료");
+location.href='./index.php';
+</script>
